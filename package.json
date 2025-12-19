@@ -32,6 +32,14 @@
       {
         "language": "javascript",
         "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/mongoose.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/middleware.code-snippets"
       }
     ]
   },

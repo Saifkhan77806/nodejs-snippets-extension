@@ -17,7 +17,7 @@ export function activate(context: vscode.ExtensionContext) {
         "src/controllers",
         "src/routes",
         "src/services",
-        "src/models",
+        "src/models`",
         "src/middlewares",
         "src/utils",
       ];
@@ -27,6 +27,8 @@ export function activate(context: vscode.ExtensionContext) {
           vscode.Uri.joinPath(rootUri, folder)
         );
       }
+
+
 
       const appJs = vscode.Uri.joinPath(rootUri, "src/app.js");
 
