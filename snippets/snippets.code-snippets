@@ -1,0 +1,77 @@
+{
+  "Express Server": {
+    "prefix": "exps",
+    "body": [
+      "const express = require('express');",
+      "const app = express();",
+      "",
+      "app.use(express.json());",
+      "",
+      "app.get('/', (req, res) => {",
+      "  res.status(200).json({ message: 'Hello World' });",
+      "});",
+      "",
+      "const PORT = process.env.PORT || 3000;",
+      "app.listen(PORT, () => {",
+      "  console.log(`Server running on port ${PORT}`);",
+      "});"
+    ],
+    "description": "Create a basic Express server"
+  },
+
+  "Async Controller": {
+    "prefix": "asynctrl",
+    "body": [
+      "const ${1:controllerName} = async (req, res) => {",
+      "  try {",
+      "    $0",
+      "  } catch (error) {",
+      "    console.error(error);",
+      "    res.status(500).json({ message: 'Server Error' });",
+      "  }",
+      "};"
+    ],
+    "description": "Async controller with try/catch"
+  },
+
+  "Express Router": {
+    "prefix": "route",
+    "body": [
+      "const express = require('express');",
+      "const router = express.Router();",
+      "",
+      "router.get('/', ${1:controller});",
+      "",
+      "module.exports = router;"
+    ],
+    "description": "Express router boilerplate"
+  },
+  "Print to console": {
+    "prefix": "cl",
+    "body": ["console.${2:log}(${TM_SELECTED_TEXT:`${1:Hello}`});"],
+    "description": "Log the output"
+  },
+  "Api handler with async await function": {
+    "prefix": "apa",
+    "body": [
+      "app.${1|get,post,put,delete,patch,head,options,trace,connect,lock,unlock,move,copy,mkcol,propfind,proppatch|}('/${3:api}',async(req,res)=>{",
+      "${3}",
+      "return res.json({message: 'data got successfully'})",
+      "})"
+    ]
+  },
+  "Api handler with async await function with try catch block": {
+    "prefix": "apat",
+    "body": [
+      "app.${1|get,post,put,delete,patch,head,options,trace,connect,lock,unlock,move,copy,mkcol,propfind,proppatch|}('/${2:api}',async(req,res)=>{",
+      "try{",
+      "${3}",
+      "return res.json({message: 'data got successfully'});",
+      "}catch(error){",
+      "     console.error(error);",
+      "  return res.status(500).json({ message: 'Internal server error' });",
+      "}",
+      "})"
+    ]
+  }
+}
