@@ -23,12 +23,27 @@ function activate(context) {
             await vscode.workspace.fs.createDirectory(vscode.Uri.joinPath(rootUri, folder));
         }
         const appJs = vscode.Uri.joinPath(rootUri, "src/app.js");
-        await vscode.workspace.fs.writeFile(appJs, Buffer.from(`const express = require('express');
+        const packJson = vscode.Uri.joinPath(rootUri, "src/package.json");
+        await vscode.workspace.fs.writeFile(packJson, Buffer.from(`
+          {
+  "name": "node-js snippets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+          `));
+        await vscode.workspace.fs.writeFile(appJs, Buffer.from(`import express from 'express';
 const app = express();
 
 app.use(express.json());
 
-module.exports = app;
+
 `));
         vscode.window.showInformationMessage("Node.js API structure created successfully");
     });

@@ -82,7 +82,7 @@
       "",
       "$0",
       "",
-      "module.exports = router;"
+      "export default router;"
     ],
     "description": "Express router boilerplate"
   },
