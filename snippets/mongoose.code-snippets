@@ -2,7 +2,7 @@
   "Export mogoose model": {
     "prefix": "exmd",
     "body": [
-      "const mongoose = require('mongoose');",
+      "import { Schema, model } from 'mongoose';",
       "",
       "const ${1:userSchema} = new mongoose.Schema({",
       "${3:name: String}",

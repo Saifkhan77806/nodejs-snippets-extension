@@ -2,7 +2,7 @@
   "Express Server": {
     "prefix": "exps",
     "body": [
-      "const express = require('express');",
+      "import express from 'express';",
       "const app = express();",
       "",
       "app.use(express.json());",
@@ -22,7 +22,7 @@
   "Async Controller": {
     "prefix": "asynctrl",
     "body": [
-      "const ${1:controllerName} = async (req, res) => {",
+      "export const ${1:controllerName} = async (req, res) => {",
       "  try {",
       "    $0",
       "  } catch (error) {",
@@ -37,14 +37,19 @@
   "Express Router": {
     "prefix": "route",
     "body": [
-      "const express = require('express');",
+      "import express from 'express';",
       "const router = express.Router();",
       "",
       "router.get('/', ${1:controller});",
       "",
-      "module.exports = router;"
+      "export default router;"
     ],
     "description": "Express router boilerplate"
+  },
+  "Express Router controller": {
+    "prefix": "route",
+    "body": ["router.${2:get}('/', ${1:controller});"],
+    "description": "Express router controller boilerplate"
   },
   "Print to console": {
     "prefix": "cl",
@@ -55,7 +60,7 @@
     "prefix": "apa",
     "body": [
       "app.${1|get,post,put,delete,patch,head,options,trace,connect,lock,unlock,move,copy,mkcol,propfind,proppatch|}('/${3:api}',async(req,res)=>{",
-      "${3}",
+      "${4}",
       "return res.json({message: 'data got successfully'})",
       "})"
     ]

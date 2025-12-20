@@ -17,7 +17,7 @@ export function activate(context: vscode.ExtensionContext) {
         "src/controllers",
         "src/routes",
         "src/services",
-        "src/models`",
+        "src/models",
         "src/middlewares",
         "src/utils",
       ];
@@ -28,14 +28,33 @@ export function activate(context: vscode.ExtensionContext) {
         );
       }
 
-
-
       const appJs = vscode.Uri.joinPath(rootUri, "src/app.js");
+      const packJson = vscode.Uri.joinPath(rootUri, "src/package.json");
+
+      await vscode.workspace.fs.writeFile(
+        packJson,
+        Buffer.from(
+          `
+          {
+  "name": "node-js snippets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+          `
+        )
+      );
 
       await vscode.workspace.fs.writeFile(
         appJs,
         Buffer.from(
-          `const express = require('express');
+          `import express from 'express';
 const app = express();
 
 app.use(express.json());

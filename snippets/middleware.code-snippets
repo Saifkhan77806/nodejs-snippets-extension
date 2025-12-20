@@ -2,7 +2,7 @@
   "Middleware boilerplate": {
     "prefix": "mdw",
     "body": [
-      "const ${1:middleware} = (req, res, next) => {",
+      "export  ${1:middleware} = (req, res, next) => {",
       "",
       "try {",
       "// middleware logic",
@@ -15,7 +15,7 @@
       "}",
       "};",
       "",
-      "module.exports = ${1:middleware};"
+     
     ]
   },
   "Sign Jsonwebtoken": {
@@ -47,7 +47,7 @@
   "JWT verification middleware": {
     "prefix": "mdwv",
     "body": [
-      "const ${1:protect} = (req, res, next) => {",
+      "export const ${1:protect} = (req, res, next) => {",
       "  let token;",
       "",
       "  if (",
@@ -78,7 +78,6 @@
       "  }",
       "};",
       "",
-      "module.exports = ${1:protect};"
     ],
     "description": "JWT authentication middleware (Express)"
   }
