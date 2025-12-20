@@ -1,6 +1,7 @@
 {
-  "name": "nodejs-snippets",
+  "name": "nodejs-extension",
   "displayName": "Node.js Snippets & Tools",
+  "publisher": "nodejsSnippets",
   "description": "Node.js snippets and commands to scaffold backend projects",
   "version": "0.1.0",
   "engines": {
@@ -53,7 +54,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.0.3",
-    "@types/vscode": "^1.107.0",
+    "@types/vscode": "^1.106.0",
     "typescript": "^5.9.3"
   }
 }
