@@ -39,9 +39,9 @@ export function activate(context: vscode.ExtensionContext) {
   "name": "node-js snippets",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo 'Error: no test specified' && exit 1"
   },
   "keywords": [],
   "author": "",
