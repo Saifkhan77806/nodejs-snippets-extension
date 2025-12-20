@@ -40,6 +40,10 @@
       {
         "language": "javascript",
         "path": "./snippets/middleware.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/routes.code-snippets"
       }
     ]
   },
